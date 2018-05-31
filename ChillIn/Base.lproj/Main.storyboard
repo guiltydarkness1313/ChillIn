@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -31,7 +32,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" textContentType="email"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IC9-fH-woX">
                                 <rect key="frame" x="60.5" y="167.5" width="200" height="30"/>
@@ -40,7 +41,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kda-Vs-yKI">
                                 <rect key="frame" x="139" y="227.5" width="42" height="30"/>
@@ -76,11 +77,23 @@
         <!--Snaps View Controller-->
         <scene sceneID="zXC-vK-NVD">
             <objects>
-                <viewController id="LD7-Zp-BIZ" customClass="SnapsViewController" customModule="ChillIn" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="LD7-Zp-BIZ" customClass="SnapsViewController" customModule="ChillIn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uY6-f4-Kd6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MfK-eR-TJb">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Pdb-TR-imd" firstAttribute="trailing" secondItem="MfK-eR-TJb" secondAttribute="trailing" id="6Kk-l1-cgb"/>
+                            <constraint firstItem="Pdb-TR-imd" firstAttribute="bottom" secondItem="MfK-eR-TJb" secondAttribute="bottom" id="JWQ-EF-Yva"/>
+                            <constraint firstItem="MfK-eR-TJb" firstAttribute="top" secondItem="Pdb-TR-imd" secondAttribute="top" id="SFh-9A-YMo"/>
+                            <constraint firstItem="MfK-eR-TJb" firstAttribute="leading" secondItem="Pdb-TR-imd" secondAttribute="leading" id="yCT-ON-ZD4"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Pdb-TR-imd"/>
                     </view>
                     <navigationItem key="navigationItem" id="OwK-ZL-uaH">
@@ -95,12 +108,56 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="MfK-eR-TJb" id="wKn-F8-lJ9"/>
+                        <segue destination="ke0-ir-aXf" kind="show" identifier="verSnapSegue" id="GHR-Lh-3dR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wcv-aj-6rT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1918.125" y="129.92957746478874"/>
         </scene>
-        <!--Title-->
+        <!--Ver Snap View Controller-->
+        <scene sceneID="hMU-vw-h4Z">
+            <objects>
+                <viewController id="ke0-ir-aXf" customClass="VerSnapViewController" customModule="ChillIn" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mr0-el-YPV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tOA-mn-o3g">
+                                <rect key="frame" x="5" y="537" width="310" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="K7q-8h-GD5">
+                                <rect key="frame" x="10" y="74" width="300" height="453"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="tOA-mn-o3g" firstAttribute="leading" secondItem="ofb-2P-IKL" secondAttribute="leading" constant="5" id="QzO-et-aTG"/>
+                            <constraint firstItem="ofb-2P-IKL" firstAttribute="bottom" secondItem="tOA-mn-o3g" secondAttribute="bottom" constant="10" id="TdC-qh-0yi"/>
+                            <constraint firstItem="ofb-2P-IKL" firstAttribute="trailing" secondItem="tOA-mn-o3g" secondAttribute="trailing" constant="5" id="fGI-wy-aef"/>
+                            <constraint firstItem="K7q-8h-GD5" firstAttribute="leading" secondItem="ofb-2P-IKL" secondAttribute="leading" constant="10" id="k4e-2J-iza"/>
+                            <constraint firstItem="ofb-2P-IKL" firstAttribute="trailing" secondItem="K7q-8h-GD5" secondAttribute="trailing" constant="10" id="khT-c0-bKk"/>
+                            <constraint firstItem="tOA-mn-o3g" firstAttribute="top" secondItem="K7q-8h-GD5" secondAttribute="bottom" constant="10" id="oOD-en-CWG"/>
+                            <constraint firstItem="K7q-8h-GD5" firstAttribute="top" secondItem="ofb-2P-IKL" secondAttribute="top" constant="10" id="q5J-Kq-T16"/>
+                            <constraint firstItem="tOA-mn-o3g" firstAttribute="centerX" secondItem="mr0-el-YPV" secondAttribute="centerX" id="ukt-8n-aBe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ofb-2P-IKL"/>
+                    </view>
+                    <connections>
+                        <outlet property="imagen" destination="K7q-8h-GD5" id="2U9-WW-y55"/>
+                        <outlet property="titulo" destination="tOA-mn-o3g" id="nfq-pa-BBx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J7a-d5-hXM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1918" y="903"/>
+        </scene>
+        <!--Selección-->
         <scene sceneID="WAO-dp-fZ8">
             <objects>
                 <viewController id="eBK-Pk-yNh" customClass="imageViewController" customModule="ChillIn" customModuleProvider="target" sceneMemberID="viewController">
@@ -142,12 +199,19 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="n5W-yA-9HI"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="KSR-5G-lQc">
-                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="hjf-dn-5Pj">
-                            <connections>
-                                <action selector="cameraTapped:" destination="eBK-Pk-yNh" id="P5R-jj-L8v"/>
-                            </connections>
-                        </barButtonItem>
+                    <navigationItem key="navigationItem" title="Selección" id="KSR-5G-lQc">
+                        <rightBarButtonItems>
+                            <barButtonItem style="plain" systemItem="add" id="amd-OH-7ZR">
+                                <connections>
+                                    <action selector="imageTapped:" destination="eBK-Pk-yNh" id="f1N-NB-vjy"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="camera" id="hjf-dn-5Pj">
+                                <connections>
+                                    <action selector="cameraTapped:" destination="eBK-Pk-yNh" id="P5R-jj-L8v"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="descriptionTextField" destination="Vyq-qL-7EP" id="2KB-Mu-sW3"/>

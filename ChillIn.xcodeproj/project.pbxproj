@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		A32F269A039E9686AC3D7F6D /* Pods_ChillIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F7E498C19C14E9610242106 /* Pods_ChillIn.framework */; };
+		F522FCBF20BEF1CB001E4054 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = F522FCBE20BEF1CB001E4054 /* Usuario.swift */; };
+		F522FCC120BF6367001E4054 /* Snap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F522FCC020BF6367001E4054 /* Snap.swift */; };
+		F522FCC320BF6B4E001E4054 /* VerSnapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F522FCC220BF6B4E001E4054 /* VerSnapViewController.swift */; };
 		F54ED83720ACD41100898CCD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54ED83620ACD41100898CCD /* AppDelegate.swift */; };
 		F54ED83920ACD41100898CCD /* inciarSesionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54ED83820ACD41100898CCD /* inciarSesionViewController.swift */; };
 		F54ED83C20ACD41200898CCD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F54ED83A20ACD41200898CCD /* Main.storyboard */; };
@@ -23,6 +26,9 @@
 		49BFCB4A326B4C7A29DD9B9B /* Pods-ChillIn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChillIn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChillIn/Pods-ChillIn.debug.xcconfig"; sourceTree = "<group>"; };
 		5F7E498C19C14E9610242106 /* Pods_ChillIn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChillIn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BABB7200EFB2BCF6CD539126 /* Pods-ChillIn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChillIn.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChillIn/Pods-ChillIn.release.xcconfig"; sourceTree = "<group>"; };
+		F522FCBE20BEF1CB001E4054 /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
+		F522FCC020BF6367001E4054 /* Snap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snap.swift; sourceTree = "<group>"; };
+		F522FCC220BF6B4E001E4054 /* VerSnapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerSnapViewController.swift; sourceTree = "<group>"; };
 		F54ED83320ACD41100898CCD /* ChillIn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChillIn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F54ED83620ACD41100898CCD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F54ED83820ACD41100898CCD /* inciarSesionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = inciarSesionViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +72,27 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		F522FCBC20BEF0F4001E4054 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F59B2FE820ACE9AB001D4CC4 /* imageViewController.swift */,
+				F59B2FEA20ACF1FE001D4CC4 /* ElegirUsuarioViewController.swift */,
+				F59B2FE620ACE733001D4CC4 /* SnapsViewController.swift */,
+				F54ED83820ACD41100898CCD /* inciarSesionViewController.swift */,
+				F522FCC220BF6B4E001E4054 /* VerSnapViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F522FCBD20BEF1B4001E4054 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F522FCBE20BEF1CB001E4054 /* Usuario.swift */,
+				F522FCC020BF6367001E4054 /* Snap.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		F54ED82A20ACD41100898CCD = {
 			isa = PBXGroup;
 			children = (
@@ -87,17 +114,15 @@
 		F54ED83520ACD41100898CCD /* ChillIn */ = {
 			isa = PBXGroup;
 			children = (
+				F522FCBD20BEF1B4001E4054 /* Models */,
+				F522FCBC20BEF0F4001E4054 /* ViewControllers */,
 				F59B2FE320ACE591001D4CC4 /* ChillIn.entitlements */,
 				F54ED83620ACD41100898CCD /* AppDelegate.swift */,
-				F54ED83820ACD41100898CCD /* inciarSesionViewController.swift */,
 				F54ED83A20ACD41200898CCD /* Main.storyboard */,
 				F54ED83D20ACD41300898CCD /* Assets.xcassets */,
 				F54ED83F20ACD41300898CCD /* LaunchScreen.storyboard */,
 				F59B2FE120ACE2BE001D4CC4 /* GoogleService-Info.plist */,
 				F54ED84220ACD41300898CCD /* Info.plist */,
-				F59B2FE620ACE733001D4CC4 /* SnapsViewController.swift */,
-				F59B2FE820ACE9AB001D4CC4 /* imageViewController.swift */,
-				F59B2FEA20ACF1FE001D4CC4 /* ElegirUsuarioViewController.swift */,
 			);
 			path = ChillIn;
 			sourceTree = "<group>";
@@ -186,6 +211,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-ChillIn/Pods-ChillIn-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -193,6 +219,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -228,7 +255,10 @@
 			files = (
 				F54ED83920ACD41100898CCD /* inciarSesionViewController.swift in Sources */,
 				F54ED83720ACD41100898CCD /* AppDelegate.swift in Sources */,
+				F522FCBF20BEF1CB001E4054 /* Usuario.swift in Sources */,
 				F59B2FE920ACE9AB001D4CC4 /* imageViewController.swift in Sources */,
+				F522FCC320BF6B4E001E4054 /* VerSnapViewController.swift in Sources */,
+				F522FCC120BF6367001E4054 /* Snap.swift in Sources */,
 				F59B2FE720ACE733001D4CC4 /* SnapsViewController.swift in Sources */,
 				F59B2FEB20ACF1FE001D4CC4 /* ElegirUsuarioViewController.swift in Sources */,
 			);
@@ -379,10 +409,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HRH4BVN79Q;
 				INFOPLIST_FILE = ChillIn/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shibuyaxpress.ChillIn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -399,10 +426,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HRH4BVN79Q;
 				INFOPLIST_FILE = ChillIn/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shibuyaxpress.ChillIn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

@@ -35,7 +35,7 @@ class iniciarSesionViewController: UIViewController {
                         self.performSegue(withIdentifier: "iniciarSesionSegue", sender: nil)
                         
                         let currentUser = Auth.auth().currentUser
-                        Database.database().reference().child((currentUser?.uid)!).child("email").setValue(currentUser?.email)
+                        Database.database().reference().child("usuarios").child((currentUser?.uid)!).child("email").setValue(currentUser?.email)
                     }
                 })
             }else{
